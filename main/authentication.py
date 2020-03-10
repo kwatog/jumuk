@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from drf_firebase.authentication import BaseFirebaseAuthentication
 from firebase_admin import credentials, initialize_app
 
-FIREBASE_CRED=os.environ.get('DJANGO_MKT_FIREBASE','mkt_firebase.json')
+FIREBASE_CRED=os.environ.get('DJANGO_FIREBASE_CRED','mkt_firebase.json')
 
 creds = credentials.Certificate(FIREBASE_CRED)
 app = initialize_app(creds, name='filipinoSGMarket')

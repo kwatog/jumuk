@@ -2,6 +2,7 @@
 # $GIT_DIR/info/exclude or the core.excludesFile configuration variable as
 # described in https://git-scm.com/docs/gitignore
 
+*.sqlite3*
 *.egg-info
 *.pot
 *.py[co]
@@ -16,4 +17,6 @@ tests/coverage_html/
 tests/.coverage
 build/
 tests/report/
+.env
+jumuk_firebase_cred.json
 
