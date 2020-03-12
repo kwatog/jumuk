@@ -12,4 +12,4 @@ class User(AbstractUser):
     photo_url = models.CharField(max_length=255, null=True, blank=True)
     email_verified = models.BooleanField(default=False, null=False)
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['id', 'firebase_uid']
+    REQUIRED_FIELDS = ['id', 'firebase_uid', 'username']
