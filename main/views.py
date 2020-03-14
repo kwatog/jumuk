@@ -16,13 +16,12 @@ def connection_test(request: HttpRequest) -> JsonResponse:
     # print(request.headers)
     user = User.objects.get(id=request.user.id)
     serializer = MyUserSerializer(user)
-    print(json.dumps(serializer.data))
     return JsonResponse(serializer.data, safe=False)
 
 
-#@api_view(['GET'])
-#@permission_classes([IsAuthenticated])
-#def login(request: HttpRequest) -> JsonResponse:
-#    user = RidegroupUser.objects.get(id=request.user.id)
-#    serializer = MyUserSerializer(user)
-#    return JsonResponse(serializer.data, safe=False)
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_user(request: HttpRequest) -> JsonResponse:
+    user = User.objects.get(id=request.user.id)
+    serializer = UserSerializer(user)
+    return JsonResponse(serializer.data, safe=False)

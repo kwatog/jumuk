@@ -6,7 +6,7 @@ from firebase_admin import credentials, initialize_app
 FIREBASE_CRED=os.environ.get('DJANGO_FIREBASE_CRED','mkt_firebase.json')
 
 creds = credentials.Certificate(FIREBASE_CRED)
-app = initialize_app(creds, name='filipinoSGMarket')
+app = initialize_app(creds, name='manbok')
 
 
 class FirebaseAuthentication(BaseFirebaseAuthentication):

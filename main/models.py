@@ -8,8 +8,11 @@ class User(AbstractUser):
     setup_complete = models.BooleanField(default=False, null=False)
     email = models.CharField(max_length=64, null=False, blank=False, unique=True)
     username = models.CharField(max_length=32, null=True, blank=True, unique=False)
+    displayname = models.CharField(max_length=32, null=True, blank=True, unique=False)
     phone = models.CharField(max_length=16, null=True, blank=True)
     photo_url = models.CharField(max_length=255, null=True, blank=True)
     email_verified = models.BooleanField(default=False, null=False)
+    first_name = models.CharField(max_length=32, null=True, blank=True, unique=False)
+    last_name = models.CharField(max_length=32, null=True, blank=True, unique=False)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['id', 'firebase_uid', 'username']

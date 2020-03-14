@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import  connection_test
+from .views import  (connection_test,
+                     get_user)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ping/',  connection_test, name='check_connection')
+    path('ping/',  connection_test, name='check_connection'),
+    path('user/',  get_user, name='get_user')   
     ]
